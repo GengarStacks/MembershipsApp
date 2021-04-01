@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Memberships.Models.ThumbnailAreaModel>
+@using Memberships.Models;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+    @if (User.Identity.IsAuthenticated)
+    {
+        foreach (var area in Model)
+        {
+            @Html.Partial("_ThumbnailAreaPartial", area)
+        }
+
+        
+    }
+    else
+    {
+
+        //left column
+        <div class="col-lg-9 col-md-8 col-sm-7">
+            
+            <div class="panel welcome-panel">
+                <div class="panel-heading">
+                    <h1>Online Learning Portal</h1>
+                    <div class="panel-body">
+                        <p>Wecome to my online learning portal project demo. Register, sign in and apply CSharp2020 coupon code.</p>
+                        
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        //right column
+<div class="col-lg-3 col-md-4 col-sm-5">
+    @Html.Partial("_RegisterUserPartial", new RegisterUserModel { Email = "", Name = "", Password = "" })
+    @Html.Partial("_ForgotPasswordPanelPartial", new ForgotPasswordViewModel { Email = ""})
+</div>
+
+    }
+</div>
+<div class="row">
+    <div class="col-sm-3 register-code-area">
+        @Html.Partial("_RegisterCodePartial")
+    </div>
+    <div class="col-sm-9">
+
+    </div>
+</div>

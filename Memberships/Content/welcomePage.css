@@ -1,0 +1,26 @@
+﻿.welcome-panel {
+    background-color:lightblue;
+    
+}
+
+.section {
+    display: inline-block;
+}
+
+.panel-body {
+    
+    text-align: center;
+}
+
+
+.tab1 {
+    background-color: darkred;
+}
+
+.tab2 {
+    background-color: orangered;
+}
+
+.tab3 {
+    background-color: indianred;
+}
